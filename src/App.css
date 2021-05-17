@@ -1,0 +1,130 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+/* TASK 1 */
+
+/* default layout */
+.App > #wrapperMain {
+  display: flex;
+  flex-direction: row;
+  background-color: beige;
+}
+
+.App > #wrapperMain > div:not(:last-child) {
+  margin-right:20px;
+  margin-bottom: 20px;
+}
+
+.App > #wrapperMain > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2px;
+  flex: 1;
+  height:300px;
+  border:1px solid #ccc;
+  background-color: aqua;
+}
+
+.App > #wrapperMain > div > div {
+  border: 1px solid #282c34;
+}
+
+.App > #wrapperMain > .wrapperAclone {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.App > #wrapperMain > .underline {
+  border-bottom: 2px solid #282c34;
+}
+
+/* tablet layout */
+@media screen and (min-width: 765px) and (max-width: 1024px){
+
+  .App-Header > h3 span { 
+    visibility: hidden;
+    position: relative;
+  }
+  .App-Header > h3:after { content: "- Tablet layout"; }
+  
+  .App > #wrapperMain {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+
+  }
+  .App > #wrapperMain > div {
+    margin-right: 0px !important;
+  }
+
+  .App > #wrapperMain > .wrapperAclone {
+    position:inherit !important;
+  }
+}
+
+
+/* mobile layout */
+@media screen and (min-width: 0px) and (max-width: 765px){
+  
+  .App-Header > h3 { position: relative; }
+  .App-Header > h3:after { content: " - Phone layout"; }
+
+  .App > #wrapperMain {
+    flex-direction: column;
+  }
+
+  .App > #wrapperMain > div {
+    margin-right: 0px !important;
+  }
+
+  .App > #wrapperMain > .wrapperAclone {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+  }
+
+}
+
+.pokemon {
+  float: left;
+  margin-bottom:10px;
+  margin-right:10px;
+  border:1px solid #ccc;
+  height: 200px;
+  width: 400px;
+  text-align: center;
+  
+}
+
+.pokemon > div {
+  float:left;
+  max-width:30%;
+  max-height:30%;
+  margin-right:20px;
+}
+
+.pokemon img {
+  max-width:100%;
+  max-height:100%;
+}
+
